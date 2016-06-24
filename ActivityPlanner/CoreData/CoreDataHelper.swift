@@ -2,20 +2,9 @@ import Foundation
 import CoreData
 
 enum CoreDataEntity: String {
-    case Video = "Video"
-
-    func shortDescriptor() -> NSSortDescriptor {
-        let key: String
-        switch self {
-        case Video:
-            key = "videoID"
-        }
-        return NSSortDescriptor(key: key, ascending: true)
-    }
-}
-
-class Video {
-    // Dummy class
+    case PlannedActivity = "PlannedActivity"
+    case WeekDay = "WeekDay"
+    case TimeOfDay = "TimeOfDay"
 }
 
 class CoreDataHelper: CoreDataStack {
@@ -25,8 +14,22 @@ class CoreDataHelper: CoreDataStack {
 
     // MARK: - Entity Description
 
-    func videoEntity() -> NSEntityDescription? {
-        if let entity = NSEntityDescription.entityForName(CoreDataEntity.Video.rawValue, inManagedObjectContext: managedObjectContext) {
+    func plannedActivityEntity() -> NSEntityDescription? {
+        if let entity = NSEntityDescription.entityForName(CoreDataEntity.PlannedActivity.rawValue, inManagedObjectContext: managedObjectContext) {
+            return entity
+        }
+        return nil
+    }
+
+    func weekDayEntity() -> NSEntityDescription? {
+        if let entity = NSEntityDescription.entityForName(CoreDataEntity.WeekDay.rawValue, inManagedObjectContext: managedObjectContext) {
+            return entity
+        }
+        return nil
+    }
+
+    func TimeOfDayEntity() -> NSEntityDescription? {
+        if let entity = NSEntityDescription.entityForName(CoreDataEntity.TimeOfDay.rawValue, inManagedObjectContext: managedObjectContext) {
             return entity
         }
         return nil
@@ -34,37 +37,35 @@ class CoreDataHelper: CoreDataStack {
 
     // MARK: - Fetched Results and FRController
 
-    func videoForID(videoID: Int) -> Video? {
-        let fetchRequest = NSFetchRequest(entityName: CoreDataEntity.Video.rawValue)
+    func plannedActivityForID(activityID: Int) -> PlannedActivity? {
+        let fetchRequest = NSFetchRequest(entityName: CoreDataEntity.PlannedActivity.rawValue)
         fetchRequest.sortDescriptors = [
-            NSSortDescriptor(key: "orderID", ascending: true)
+            NSSortDescriptor(key: "activityID", ascending: true)
         ]
         let fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: managedObjectContext,
             sectionNameKeyPath: nil,
             cacheName: nil)
-        fetchRequest.predicate = NSPredicate(format: "videoID == \(videoID)")
+        fetchRequest.predicate = NSPredicate(format: "activityID == \(activityID)")
         do {
             try fetchedResultsController.performFetch()
         } catch let fetchError as NSError {
             print("fetchError ", fetchError)
         }
-        return fetchedResultsController.fetchedObjects?.first as? Video
+        return fetchedResultsController.fetchedObjects?.first as? PlannedActivity
     }
 
-    func videoFetchRC() -> NSFetchedResultsController? {
-        let fetchRequest = NSFetchRequest(entityName: CoreDataEntity.Video.rawValue)
+    func plannedActivityFetchRC() -> NSFetchedResultsController? {
+        let fetchRequest = NSFetchRequest(entityName: CoreDataEntity.PlannedActivity.rawValue)
         fetchRequest.sortDescriptors = [
-            NSSortDescriptor(key: "orderID", ascending: true)
+            NSSortDescriptor(key: "activityID", ascending: true)
         ]
         let fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: managedObjectContext,
             sectionNameKeyPath: nil,
             cacheName: nil)
-
-        fetchRequest.predicate = NSPredicate(format: "deleteFlag == 0")
         do {
             try fetchedResultsController.performFetch()
         } catch let fetchError as NSError {
@@ -73,28 +74,45 @@ class CoreDataHelper: CoreDataStack {
         return fetchedResultsController
     }
 
-    func videoFetchObjects() -> NSArray? {
-        return videoFetchRC()?.fetchedObjects
+    func plannedActivityFetchObjects() -> NSArray? {
+        return plannedActivityFetchRC()?.fetchedObjects
     }
 
-    /**
-     This method will insert Video Object from WebService
-     - parameter dictionary: NSDictionary
-     */
-    func insertVideo(dictionary: NSDictionary) {
-        if let videoID = Int(dictionary.objectForKey("id") as! String) {
-            let video: Video!
-            if let oldVideo = videoForID(videoID) {
-                video = oldVideo
-            } else {
-//                video = Video(entity: videoEntity()!, insertIntoManagedObjectContext: managedObjectContext)
-                /* Only add or update TimeStamp if its a new video */
-//                video.addedDate = TimeStamp
-            }
-//            video.videoFromDictionary(dictionary)
+    func allPlannedActivity() -> [PlannedActivity]? {
+        return plannedActivityFetchObjects() as? [PlannedActivity]
+    }
 
-            saveMainContext()
+    private func create7DaysOfAWeek() -> [WeekDay] {
+        var weekDays = [WeekDay]()
+
+        for i in 1...7 {
+            let weekDay = WeekDay(entity: weekDayEntity()!, insertIntoManagedObjectContext: managedObjectContext)
+            weekDay.dayID = i
+            weekDay.dayName = DayOfWeek.dayName(i)
+            weekDays.append(weekDay)
         }
+        
+        return weekDays
+
+    }
+
+    func createTimeOfDay(date: NSDate) -> TimeOfDay {
+        let timeOfDay = TimeOfDay(entity: TimeOfDayEntity()!, insertIntoManagedObjectContext: managedObjectContext)
+        timeOfDay.dateTime = date
+        return timeOfDay
+    }
+
+    func createOrUpdatePlannedActivity(activityID: Int) {
+
+        if let oldPlannedActivity = plannedActivityForID(activityID) {
+
+        } else {
+            let plannedActivity = PlannedActivity(entity: plannedActivityEntity()!, insertIntoManagedObjectContext: managedObjectContext)
+            plannedActivity.activityID = activityID
+            plannedActivity.days = NSSet(array: create7DaysOfAWeek())
+        }
+
+        saveMainContext()
     }
 
 }

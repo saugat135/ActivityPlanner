@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
-    <elements/>
+    <entity name="PlannedActivity" representedClassName="PlannedActivity" syncable="YES">
+        <attribute name="activityID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="descriptor" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeekDay" syncable="YES"/>
+    </entity>
+    <entity name="TimeOfDay" representedClassName="TimeOfDay" syncable="YES">
+        <attribute name="dateTime" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="WeekDay" representedClassName="WeekDay" syncable="YES">
+        <attribute name="dayID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dayName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="time" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TimeOfDay" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PlannedActivity" positionX="-29" positionY="-207" width="128" height="88"/>
+        <element name="WeekDay" positionX="295" positionY="-9" width="128" height="88"/>
+        <element name="TimeOfDay" positionX="-36" positionY="27" width="128" height="58"/>
+    </elements>
 </model>
