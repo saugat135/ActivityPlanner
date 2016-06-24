@@ -1,35 +1,10 @@
 import Foundation
 
-enum Hour: Int {
-  case one = 1
-  case two
-  case three
-  case four
-  case five
-  case six
-  case seven
-  case eight
-  case nine
-  case ten
-  case eleven
-  case twelve
-  
-}
-
-typealias Minute = Int
-
 infix operator -- { associativity left precedence 139 }
 
 func -- (startTime: TimeOfDay, endTime: TimeOfDay) -> TimeInterval {
   return (startTime, endTime)
 }
-
-//infix operator ^ { associativity left precedence 140 }
-//
-//func ^(hour: Int, meridian: Meridian) -> TimeOfDay! {
-//  guard let hour = Hour(rawValue: hour) else { return nil }
-//  return TimeOfDay(hour: hour, minute: minute, meridian: meridian)
-//}
 
 infix operator • { associativity left precedence 140 }
 func •(hour: Int, minute: Int) -> TimeOfDay {
@@ -37,19 +12,20 @@ func •(hour: Int, minute: Int) -> TimeOfDay {
 }
 
 // Operator overloading for conformance with Comparable protocol
-func ==(lhs: TimeOfDay, rhs: TimeOfDay) -> Bool {
-  return lhs.hashValue() == rhs.hashValue()
+public func ==(lhs: TimeOfDay, rhs: TimeOfDay) -> Bool {
+  return lhs.hour == rhs.hour &&
+         lhs.minute == rhs.minute
 }
 
-func <(lhs: TimeOfDay, rhs: TimeOfDay) -> Bool {
-  return lhs.hashValue() < rhs.hashValue()
+public func <(lhs: TimeOfDay, rhs: TimeOfDay) -> Bool {
+  return lhs.hour < rhs.hour
 }
 
-func >(lhs: TimeOfDay, rhs: TimeOfDay) -> Bool {
-  return lhs.hashValue() > rhs.hashValue()
+public func >(lhs: TimeOfDay, rhs: TimeOfDay) -> Bool {
+  return lhs.hour > rhs.hour
 }
 
-struct TimeOfDay: Comparable {
+public struct TimeOfDay: Comparable {
   
   enum Meridian: String {
     case AM = "am"
@@ -58,47 +34,36 @@ struct TimeOfDay: Comparable {
   
   var hour: Int
   var minute: Int
-  var meridian: Meridian
-  
-  private func dateComponents() -> NSDateComponents {
-    let component = NSDateComponents()
-    let calendar = NSCalendar.currentCalendar()
-    
-    component.calendar = calendar
-    
-    component.hour = self.convertTo24Hour()
-    component.minute = 0
-    component.second = 0
-    return component
-  }
+  lazy var meridian: Meridian = {
+    if self.hour == 0 {
+      return .PM
+    } else if self.hour > 12 {
+      return .PM
+    } else {
+      return .AM
+    }
+  }()
+  var dateComponents: NSDateComponents
   
   func toNSDate() -> NSDate {
     let calendar = NSCalendar.currentCalendar()
-    return calendar.dateFromComponents(self.dateComponents())!
+    return calendar.dateFromComponents(self.dateComponents)!
   }
   
-  func hashValue() -> Int {
-    return self.convertTo24Hour()
+  init(fromDate date: NSDate) {
+    let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+    
+    let hourComponent = calendar.component(.Hour, fromDate: date)
+    let minuteComponent = calendar.component(.Minute, fromDate: date)
+    
+    self.hour = hourComponent
+    self.minute = minuteComponent
+    
+    self.dateComponents = NSDateComponents(date: date, calendar: calendar)
+    
   }
   
-  func convertTo24Hour() -> Int {
-    switch self.meridian {
-    case .PM:
-      if hour != 12 {
-        return hour + 12
-      } else {
-        return hour
-      }
-    case .AM:
-      if hour == 12 {
-        return 0
-      } else {
-        return hour
-      }
-    }
-  }
-  
-  init(hour: Int, minute: Minute) {
+  init(hour: Int, minute: Int) {
     
     let component = NSDateComponents()
     let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
@@ -110,16 +75,10 @@ struct TimeOfDay: Comparable {
     let date = calendar.dateFromComponents(component)
     let hour = calendar.component(.Hour, fromDate: date!)
     let min = calendar.component(.Minute, fromDate: date!)
-    let sec = calendar.component(.Second, fromDate: date!)
     
     self.hour = hour
     self.minute = min
-    if hour == 0 {
-      self.meridian = .PM
-    } else if hour > 12 {
-      self.meridian = .PM
-    } else {
-      self.meridian = .AM
-    }
+    
+    self.dateComponents = component
   }
 }

@@ -84,12 +84,7 @@ enum ActivityTime: Int {
   }
   
   static func timeIntervalFromCurrentTime() -> TimeInterval? {
-    let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
-    
-    let hourComponent = calendar.component(.Hour, fromDate: NSDate())
-    let minuteComponent = calendar.component(.Minute, fromDate: NSDate())
-    
-    let timeOfDay = TimeOfDay(hour: hourComponent, minute: minuteComponent)
+    let timeOfDay = TimeOfDay(fromDate: NSDate())
     let activityTime = ActivityTime.allActivityTimes().filter {
       return timeOfDay <= $0.timeInterval().endTime
       }.map{ $0 }
