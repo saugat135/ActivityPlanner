@@ -15,6 +15,8 @@
 		CD08FDF61D1D3F13002D50E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD08FDF51D1D3F13002D50E5 /* Assets.xcassets */; };
 		CD08FDF91D1D3F13002D50E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD08FDF71D1D3F13002D50E5 /* LaunchScreen.storyboard */; };
 		CD08FE041D1D3F13002D50E5 /* ActivityPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE031D1D3F13002D50E5 /* ActivityPlannerTests.swift */; };
+		CD08FE191D1D938F002D50E5 /* TimeOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE181D1D938F002D50E5 /* TimeOfDay.swift */; };
+		CD08FE1B1D1D9432002D50E5 /* ActivityTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		CD08FDFF1D1D3F13002D50E5 /* ActivityPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD08FE031D1D3F13002D50E5 /* ActivityPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPlannerTests.swift; sourceTree = "<group>"; };
 		CD08FE051D1D3F13002D50E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD08FE181D1D938F002D50E5 /* TimeOfDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOfDay.swift; sourceTree = "<group>"; };
+		CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		CD08FDED1D1D3F13002D50E5 /* ActivityPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				CD08FE131D1D935E002D50E5 /* Library */,
 				CD08FDEE1D1D3F13002D50E5 /* AppDelegate.swift */,
 				CD08FDF01D1D3F13002D50E5 /* ViewController.swift */,
 				CD08FDF21D1D3F13002D50E5 /* Main.storyboard */,
@@ -143,6 +148,15 @@
 				CD08FE051D1D3F13002D50E5 /* Info.plist */,
 			);
 			path = ActivityPlannerTests;
+			sourceTree = "<group>";
+		};
+		CD08FE131D1D935E002D50E5 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */,
+				CD08FE181D1D938F002D50E5 /* TimeOfDay.swift */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD08FE191D1D938F002D50E5 /* TimeOfDay.swift in Sources */,
+				CD08FE1B1D1D9432002D50E5 /* ActivityTime.swift in Sources */,
 				CD08FDF11D1D3F13002D50E5 /* ViewController.swift in Sources */,
 				CD08FDEF1D1D3F13002D50E5 /* AppDelegate.swift in Sources */,
 			);
