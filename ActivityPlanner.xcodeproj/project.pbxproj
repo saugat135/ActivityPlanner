@@ -18,6 +18,7 @@
 		CD08FE191D1D938F002D50E5 /* TimeOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE181D1D938F002D50E5 /* TimeOfDay.swift */; };
 		CD08FE1B1D1D9432002D50E5 /* ActivityTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */; };
 		CD08FE1D1D1D9882002D50E5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE1C1D1D9882002D50E5 /* Utilities.swift */; };
+		CD08FE231D1DC1A7002D50E5 /* WeeklyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE221D1DC1A7002D50E5 /* WeeklyActivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		CD08FE181D1D938F002D50E5 /* TimeOfDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOfDay.swift; sourceTree = "<group>"; };
 		CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTime.swift; sourceTree = "<group>"; };
 		CD08FE1C1D1D9882002D50E5 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		CD08FE221D1DC1A7002D50E5 /* WeeklyActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,11 +157,20 @@
 		CD08FE131D1D935E002D50E5 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				CD08FE221D1DC1A7002D50E5 /* WeeklyActivity.swift */,
+				CD08FE261D1DDD40002D50E5 /* Helpers */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		CD08FE261D1DDD40002D50E5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
 				CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */,
 				CD08FE181D1D938F002D50E5 /* TimeOfDay.swift */,
 				CD08FE1C1D1D9882002D50E5 /* Utilities.swift */,
 			);
-			name = Library;
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD08FE191D1D938F002D50E5 /* TimeOfDay.swift in Sources */,
+				CD08FE231D1DC1A7002D50E5 /* WeeklyActivity.swift in Sources */,
 				CD08FE1B1D1D9432002D50E5 /* ActivityTime.swift in Sources */,
 				CD08FDF11D1D3F13002D50E5 /* ViewController.swift in Sources */,
 				CD08FE1D1D1D9882002D50E5 /* Utilities.swift in Sources */,
@@ -430,6 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ActivityPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.saugat135.ActivityPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
