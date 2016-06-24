@@ -1,5 +1,5 @@
 //
-//  TimeOfDay.swift
+//  DateTimeOfDay.swift
 //  ActivityPlanner
 //
 //  Created by Anmol on 6/25/16.
@@ -9,8 +9,8 @@
 import Foundation
 import CoreData
 
-@objc(TimeOfDay)
-class TimeOfDay: NSManagedObject {
+@objc(DateTimeOfDay)
+class DateTimeOfDay: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 

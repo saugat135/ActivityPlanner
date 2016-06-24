@@ -1,5 +1,5 @@
 //
-//  TimeOfDay+CoreDataProperties.swift
+//  DateTimeOfDay+CoreDataProperties.swift
 //  ActivityPlanner
 //
 //  Created by Anmol on 6/25/16.
@@ -12,7 +12,7 @@
 import Foundation
 import CoreData
 
-extension TimeOfDay {
+extension DateTimeOfDay {
 
     @NSManaged var dateTime: NSDate?
 

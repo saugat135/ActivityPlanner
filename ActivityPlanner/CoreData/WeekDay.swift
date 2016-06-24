@@ -25,8 +25,8 @@ enum DayOfWeek: Int {
 class WeekDay: NSManagedObject {
 
     func addDateToDay(date: NSDate) {
-        let timeOfDay = CoreDataHelper.sharedInstance.createTimeOfDay(date)
-        self.time?.setByAddingObject(timeOfDay)
+        let dateTimeOfDay = CoreDataHelper.sharedInstance.createDateTimeOfDay(date)
+        self.time?.setByAddingObject(dateTimeOfDay)
     }
 
 // Insert code here to add functionality to your managed object subclass

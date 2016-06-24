@@ -4,7 +4,7 @@ import CoreData
 enum CoreDataEntity: String {
     case PlannedActivity = "PlannedActivity"
     case WeekDay = "WeekDay"
-    case TimeOfDay = "TimeOfDay"
+    case DateTimeOfDay = "DateTimeOfDay"
 }
 
 class CoreDataHelper: CoreDataStack {
@@ -28,8 +28,8 @@ class CoreDataHelper: CoreDataStack {
         return nil
     }
 
-    func TimeOfDayEntity() -> NSEntityDescription? {
-        if let entity = NSEntityDescription.entityForName(CoreDataEntity.TimeOfDay.rawValue, inManagedObjectContext: managedObjectContext) {
+    func DateTimeOfDayEntity() -> NSEntityDescription? {
+        if let entity = NSEntityDescription.entityForName(CoreDataEntity.DateTimeOfDay.rawValue, inManagedObjectContext: managedObjectContext) {
             return entity
         }
         return nil
@@ -91,14 +91,14 @@ class CoreDataHelper: CoreDataStack {
             weekDay.dayName = DayOfWeek.dayName(i)
             weekDays.append(weekDay)
         }
-        
+
         return weekDays
 
     }
 
-    func createTimeOfDay(date: NSDate) -> TimeOfDay {
-        let timeOfDay = TimeOfDay(entity: TimeOfDayEntity()!, insertIntoManagedObjectContext: managedObjectContext)
-        timeOfDay.dateTime = date
+    func createDateTimeOfDay(dateTime: NSDate) -> DateTimeOfDay {
+        let timeOfDay = DateTimeOfDay(entity: DateTimeOfDayEntity()!, insertIntoManagedObjectContext: managedObjectContext)
+        timeOfDay.dateTime = dateTime
         return timeOfDay
     }
 
