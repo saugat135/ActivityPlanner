@@ -16,10 +16,7 @@ enum Hour: Int {
   
 }
 
-enum Meridian: String {
-  case AM = "am"
-  case PM = "pm"
-}
+typealias Minute = Int
 
 infix operator -- { associativity left precedence 139 }
 
@@ -27,11 +24,16 @@ func -- (startTime: TimeOfDay, endTime: TimeOfDay) -> TimeInterval {
   return (startTime, endTime)
 }
 
-infix operator ^ { associativity left precedence 140 }
+//infix operator ^ { associativity left precedence 140 }
+//
+//func ^(hour: Int, meridian: Meridian) -> TimeOfDay! {
+//  guard let hour = Hour(rawValue: hour) else { return nil }
+//  return TimeOfDay(hour: hour, minute: minute, meridian: meridian)
+//}
 
-func ^ (hour: Int, meridian: Meridian) -> TimeOfDay! {
-  guard let hour = Hour(rawValue: hour) else { return nil }
-  return TimeOfDay(hour: hour, meridian: meridian)
+infix operator • { associativity left precedence 140 }
+func •(hour: Int, minute: Int) -> TimeOfDay {
+  return TimeOfDay(hour: hour, minute: minute)
 }
 
 // Operator overloading for conformance with Comparable protocol
@@ -49,7 +51,13 @@ func >(lhs: TimeOfDay, rhs: TimeOfDay) -> Bool {
 
 struct TimeOfDay: Comparable {
   
-  var hour: Hour
+  enum Meridian: String {
+    case AM = "am"
+    case PM = "pm"
+  }
+  
+  var hour: Int
+  var minute: Int
   var meridian: Meridian
   
   private func dateComponents() -> NSDateComponents {
@@ -76,33 +84,42 @@ struct TimeOfDay: Comparable {
   func convertTo24Hour() -> Int {
     switch self.meridian {
     case .PM:
-      if hour.rawValue != 12 {
-        return hour.rawValue + 12
+      if hour != 12 {
+        return hour + 12
       } else {
-        return hour.rawValue
+        return hour
       }
     case .AM:
-      if hour.rawValue == 12 {
+      if hour == 12 {
         return 0
       } else {
-        return hour.rawValue
+        return hour
       }
     }
   }
   
-  init(hour: Hour, meridian: Meridian) {
+  init(hour: Int, minute: Minute) {
+    
+    let component = NSDateComponents()
+    let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+    component.calendar = calendar
+    component.hour = hour
+    component.minute = minute
+    component.second = 0
+    
+    let date = calendar.dateFromComponents(component)
+    let hour = calendar.component(.Hour, fromDate: date!)
+    let min = calendar.component(.Minute, fromDate: date!)
+    let sec = calendar.component(.Second, fromDate: date!)
+    
     self.hour = hour
-    self.meridian = meridian
-  }
-  
-  subscript(hour: String, meridian: String) -> TimeOfDay {
-    get {
-      assert((hour == "hour" && meridian == "meridian"), "The provided key does not match")
-      return TimeOfDay(hour: self.hour, meridian: self.meridian)
-    }
-    set {
-      self.hour = newValue.hour
-      self.meridian = newValue.meridian
+    self.minute = min
+    if hour == 0 {
+      self.meridian = .PM
+    } else if hour > 12 {
+      self.meridian = .PM
+    } else {
+      self.meridian = .AM
     }
   }
 }

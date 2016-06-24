@@ -86,15 +86,10 @@ enum ActivityTime: Int {
   static func timeIntervalFromCurrentTime() -> TimeInterval? {
     let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
     
-    var hourComponent = calendar.component(.Hour, fromDate: NSDate())
+    let hourComponent = calendar.component(.Hour, fromDate: NSDate())
+    let minuteComponent = calendar.component(.Minute, fromDate: NSDate())
     
-    var meridian: Meridian = .AM
-    if hourComponent > 12 {
-      hourComponent = hourComponent % 12
-      meridian = .PM
-    }
-    let hour = Hour(rawValue: hourComponent)
-    let timeOfDay = TimeOfDay(hour: hour!, meridian: meridian)
+    let timeOfDay = TimeOfDay(hour: hourComponent, minute: minuteComponent)
     let activityTime = ActivityTime.allActivityTimes().filter {
       return timeOfDay <= $0.timeInterval().endTime
       }.map{ $0 }
@@ -110,27 +105,27 @@ enum ActivityTime: Int {
 
     switch self {
     case .earlyMorning:
-      return 6 ^ .AM -- 8 ^ .AM
+      return 6•00 -- 8•00
     case .morning:
-      return 8 ^ .AM -- 10 ^ .AM
+      return 8•00 -- 10•00
     case .lateMorning:
-      return 10 ^ .AM -- 12 ^ .PM
+      return 10•00 -- 12•00
     case .afternoon:
-      return 12 ^ .PM -- 2 ^ .PM
+      return 12•00 -- 14•00
     case .lateAfternoon:
-      return 2 ^ .PM -- 4 ^ .PM
+      return 14•00 -- 16•00
     case .earlyEvening:
-      return 4 ^ .PM -- 6 ^ .PM
+      return 16•00 -- 18•00
     case .evening:
-      return 6 ^ .PM -- 8 ^ .PM
+      return 18•00 -- 20•00
     case .night:
-      return 8 ^ .PM -- 10 ^ .PM
+      return 20•00 -- 22•00
     case .latenight:
-      return 10 ^ .PM -- 12 ^ .AM
+      return 22•00 -- 00•00
     case .midnight:
-      return 12 ^ .AM -- 2 ^ .AM
+      return 00•00 -- 2•00
     case .afterMidnight:
-      return 2 ^ .AM -- 6 ^ .AM
+      return 2•00 -- 6•00
     }
   }
 

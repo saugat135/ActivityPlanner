@@ -17,6 +17,7 @@
 		CD08FE041D1D3F13002D50E5 /* ActivityPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE031D1D3F13002D50E5 /* ActivityPlannerTests.swift */; };
 		CD08FE191D1D938F002D50E5 /* TimeOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE181D1D938F002D50E5 /* TimeOfDay.swift */; };
 		CD08FE1B1D1D9432002D50E5 /* ActivityTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */; };
+		CD08FE1D1D1D9882002D50E5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE1C1D1D9882002D50E5 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		CD08FE051D1D3F13002D50E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD08FE181D1D938F002D50E5 /* TimeOfDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOfDay.swift; sourceTree = "<group>"; };
 		CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTime.swift; sourceTree = "<group>"; };
+		CD08FE1C1D1D9882002D50E5 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			children = (
 				CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */,
 				CD08FE181D1D938F002D50E5 /* TimeOfDay.swift */,
+				CD08FE1C1D1D9882002D50E5 /* Utilities.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				CD08FE191D1D938F002D50E5 /* TimeOfDay.swift in Sources */,
 				CD08FE1B1D1D9432002D50E5 /* ActivityTime.swift in Sources */,
 				CD08FDF11D1D3F13002D50E5 /* ViewController.swift in Sources */,
+				CD08FE1D1D1D9882002D50E5 /* Utilities.swift in Sources */,
 				CD08FDEF1D1D3F13002D50E5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
