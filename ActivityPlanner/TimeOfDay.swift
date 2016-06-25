@@ -46,8 +46,22 @@ public struct TimeOfDay: Comparable {
   var dateComponents: NSDateComponents
   
   func toNSDate() -> NSDate {
-    let calendar = NSCalendar.currentCalendar()
-    return calendar.dateFromComponents(self.dateComponents)!
+    let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+    return calendar!.dateFromComponents(self.dateComponents)!
+  }
+  
+  func toNSDate(beforeMinutes minutes: Int) -> NSDate {
+    let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+    let dateComponents = self.dateComponents
+    dateComponents.minute -= minutes
+    return (calendar?.dateFromComponents(dateComponents))!
+  }
+  
+  func toNSDate(afterMinutes minutes: Int) -> NSDate {
+    let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+    let dateComponents = self.dateComponents
+    dateComponents.minute += minutes
+    return (calendar?.dateFromComponents(dateComponents))!
   }
   
   init(fromDate date: NSDate) {

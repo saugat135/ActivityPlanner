@@ -62,4 +62,8 @@ public enum WeeklyActivity {
     }
   }
   
+  func notificationsForActivityTimes(activityTimes: [TimeOfDay]) {
+    
+  }
+  
 }
