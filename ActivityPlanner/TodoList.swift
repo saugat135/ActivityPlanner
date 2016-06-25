@@ -33,7 +33,7 @@ class TodoList {
         notification.soundName = UILocalNotificationDefaultSoundName // play default sound
         notification.userInfo = ["title": item.title, "UUID": item.UUID] // assign a unique identifier to the notification so that we can retrieve it later
         notification.category = "TODO_CATEGORY"
-        notification.repeatInterval = NSCalendarUnit.Day
+        notification.repeatInterval = NSCalendarUnit.Weekday
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     

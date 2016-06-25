@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     
-    var activityPlan = ActivityPlan(activityID: 1, activityName: "Test", shouldEnableNotification: true, activitiesInWeek: [[], [], [], [], [], [], [11•51]])
+    var activityPlan = ActivityPlan(activityID: 1, activityName: "Test", shouldEnableNotification: true, activitiesInWeek: [[12•46], [], [], [], [], [], [12•47]])
     return true
   }
   
