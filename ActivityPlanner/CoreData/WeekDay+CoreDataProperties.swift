@@ -17,5 +17,6 @@ extension WeekDay {
     @NSManaged var dayID: NSNumber?
     @NSManaged var dayName: String?
     @NSManaged var time: NSSet?
-
+    @NSManaged var forPlannedActivity: PlannedActivity?
+    
 }

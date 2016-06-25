@@ -2,20 +2,22 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
     <entity name="DateTimeOfDay" representedClassName="DateTimeOfDay" syncable="YES">
         <attribute name="dateTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="ofDay" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeekDay" inverseName="time" inverseEntity="WeekDay" syncable="YES"/>
     </entity>
     <entity name="PlannedActivity" representedClassName="PlannedActivity" syncable="YES">
         <attribute name="activityID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="descriptor" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeekDay" syncable="YES"/>
+        <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeekDay" inverseName="forPlannedActivity" inverseEntity="WeekDay" syncable="YES"/>
     </entity>
     <entity name="WeekDay" representedClassName="WeekDay" syncable="YES">
         <attribute name="dayID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="dayName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="time" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DateTimeOfDay" syncable="YES"/>
+        <relationship name="forPlannedActivity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlannedActivity" inverseName="days" inverseEntity="PlannedActivity" syncable="YES"/>
+        <relationship name="time" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DateTimeOfDay" inverseName="ofDay" inverseEntity="DateTimeOfDay" syncable="YES"/>
     </entity>
     <elements>
         <element name="PlannedActivity" positionX="-29" positionY="-207" width="128" height="88"/>
-        <element name="WeekDay" positionX="295" positionY="-9" width="128" height="88"/>
-        <element name="DateTimeOfDay" positionX="-36" positionY="27" width="128" height="58"/>
+        <element name="WeekDay" positionX="295" positionY="-9" width="128" height="103"/>
+        <element name="DateTimeOfDay" positionX="-36" positionY="27" width="128" height="73"/>
     </elements>
 </model>

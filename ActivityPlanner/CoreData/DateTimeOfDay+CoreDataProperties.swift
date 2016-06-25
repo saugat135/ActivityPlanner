@@ -15,5 +15,6 @@ import CoreData
 extension DateTimeOfDay {
 
     @NSManaged var dateTime: NSDate?
+    @NSManaged var ofDay: WeekDay?
 
 }
