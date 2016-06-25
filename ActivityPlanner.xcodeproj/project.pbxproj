@@ -32,6 +32,17 @@
 		CD08FE2D1D1E45A1002D50E5 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE2B1D1E45A1002D50E5 /* TodoItem.swift */; };
 		CD08FE2E1D1E45A1002D50E5 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE2C1D1E45A1002D50E5 /* TodoList.swift */; };
 		CD08FE331D1E46EA002D50E5 /* ActivityUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE321D1E46EA002D50E5 /* ActivityUtils.swift */; };
+		CD08FE441D1E58C7002D50E5 /* ActivityPlannerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE3A1D1E58C7002D50E5 /* ActivityPlannerTVC.swift */; };
+		CD08FE451D1E58C7002D50E5 /* ActivityPlannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE3B1D1E58C7002D50E5 /* ActivityPlannerVC.swift */; };
+		CD08FE461D1E58C7002D50E5 /* ActivitySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE3C1D1E58C7002D50E5 /* ActivitySelectorView.swift */; };
+		CD08FE471D1E58C7002D50E5 /* ActivitySelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD08FE3D1D1E58C7002D50E5 /* ActivitySelectorView.xib */; };
+		CD08FE481D1E58C7002D50E5 /* ActivityTimeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE3E1D1E58C7002D50E5 /* ActivityTimeTVC.swift */; };
+		CD08FE491D1E58C7002D50E5 /* FrequencyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE3F1D1E58C7002D50E5 /* FrequencyPicker.swift */; };
+		CD08FE4A1D1E58C7002D50E5 /* FrequencyPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD08FE401D1E58C7002D50E5 /* FrequencyPicker.xib */; };
+		CD08FE4B1D1E58C7002D50E5 /* FrequencyPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE411D1E58C7002D50E5 /* FrequencyPickerCell.swift */; };
+		CD08FE4C1D1E58C7002D50E5 /* ActivityPlannerTVCSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD08FE421D1E58C7002D50E5 /* ActivityPlannerTVCSectionHeaderView.xib */; };
+		CD08FE4D1D1E58C7002D50E5 /* ActivityPlannerTVCSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE431D1E58C7002D50E5 /* ActivityPlannerTVCSectionHeaderView.swift */; };
+		CD08FE4F1D1E5920002D50E5 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD08FE4E1D1E5920002D50E5 /* Activity.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +119,17 @@
 		CD08FE2B1D1E45A1002D50E5 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		CD08FE2C1D1E45A1002D50E5 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		CD08FE321D1E46EA002D50E5 /* ActivityUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityUtils.swift; sourceTree = "<group>"; };
+		CD08FE3A1D1E58C7002D50E5 /* ActivityPlannerTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPlannerTVC.swift; sourceTree = "<group>"; };
+		CD08FE3B1D1E58C7002D50E5 /* ActivityPlannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPlannerVC.swift; sourceTree = "<group>"; };
+		CD08FE3C1D1E58C7002D50E5 /* ActivitySelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitySelectorView.swift; sourceTree = "<group>"; };
+		CD08FE3D1D1E58C7002D50E5 /* ActivitySelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivitySelectorView.xib; sourceTree = "<group>"; };
+		CD08FE3E1D1E58C7002D50E5 /* ActivityTimeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTimeTVC.swift; sourceTree = "<group>"; };
+		CD08FE3F1D1E58C7002D50E5 /* FrequencyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPicker.swift; sourceTree = "<group>"; };
+		CD08FE401D1E58C7002D50E5 /* FrequencyPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrequencyPicker.xib; sourceTree = "<group>"; };
+		CD08FE411D1E58C7002D50E5 /* FrequencyPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPickerCell.swift; sourceTree = "<group>"; };
+		CD08FE421D1E58C7002D50E5 /* ActivityPlannerTVCSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityPlannerTVCSectionHeaderView.xib; sourceTree = "<group>"; };
+		CD08FE431D1E58C7002D50E5 /* ActivityPlannerTVCSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPlannerTVCSectionHeaderView.swift; sourceTree = "<group>"; };
+		CD08FE4E1D1E5920002D50E5 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +198,7 @@
 		CD08FDED1D1D3F13002D50E5 /* ActivityPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				CD08FE371D1E584F002D50E5 /* Demo */,
 				26B449A01D1DB4B30060FD0B /* CoreData */,
 				CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */,
 				CD08FE131D1D935E002D50E5 /* Library */,
@@ -226,6 +249,24 @@
 				CD08FE2C1D1E45A1002D50E5 /* TodoList.swift */,
 			);
 			name = Notifications;
+			sourceTree = "<group>";
+		};
+		CD08FE371D1E584F002D50E5 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				CD08FE4E1D1E5920002D50E5 /* Activity.storyboard */,
+				CD08FE3A1D1E58C7002D50E5 /* ActivityPlannerTVC.swift */,
+				CD08FE3B1D1E58C7002D50E5 /* ActivityPlannerVC.swift */,
+				CD08FE3C1D1E58C7002D50E5 /* ActivitySelectorView.swift */,
+				CD08FE3D1D1E58C7002D50E5 /* ActivitySelectorView.xib */,
+				CD08FE3E1D1E58C7002D50E5 /* ActivityTimeTVC.swift */,
+				CD08FE3F1D1E58C7002D50E5 /* FrequencyPicker.swift */,
+				CD08FE401D1E58C7002D50E5 /* FrequencyPicker.xib */,
+				CD08FE411D1E58C7002D50E5 /* FrequencyPickerCell.swift */,
+				CD08FE421D1E58C7002D50E5 /* ActivityPlannerTVCSectionHeaderView.xib */,
+				CD08FE431D1E58C7002D50E5 /* ActivityPlannerTVCSectionHeaderView.swift */,
+			);
+			name = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,7 +377,11 @@
 			files = (
 				CD08FDF91D1D3F13002D50E5 /* LaunchScreen.storyboard in Resources */,
 				CD08FDF61D1D3F13002D50E5 /* Assets.xcassets in Resources */,
+				CD08FE471D1E58C7002D50E5 /* ActivitySelectorView.xib in Resources */,
+				CD08FE4C1D1E58C7002D50E5 /* ActivityPlannerTVCSectionHeaderView.xib in Resources */,
+				CD08FE4F1D1E5920002D50E5 /* Activity.storyboard in Resources */,
 				CD08FDF41D1D3F13002D50E5 /* Main.storyboard in Resources */,
+				CD08FE4A1D1E58C7002D50E5 /* FrequencyPicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,18 +399,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD08FE461D1E58C7002D50E5 /* ActivitySelectorView.swift in Sources */,
 				CD08FE2D1D1E45A1002D50E5 /* TodoItem.swift in Sources */,
 				26B449C91D1DD4260060FD0B /* WeekDay+CoreDataProperties.swift in Sources */,
 				26B449C81D1DD4260060FD0B /* DateTimeOfDay.swift in Sources */,
 				26B449AB1D1DB7060060FD0B /* CoreDataStack.swift in Sources */,
 				26B449CA1D1DD4260060FD0B /* WeekDay.swift in Sources */,
 				26B449C61D1DD4260060FD0B /* PlannedActivity.swift in Sources */,
+				CD08FE4B1D1E58C7002D50E5 /* FrequencyPickerCell.swift in Sources */,
+				CD08FE451D1E58C7002D50E5 /* ActivityPlannerVC.swift in Sources */,
 				26B449C71D1DD4260060FD0B /* DateTimeOfDay+CoreDataProperties.swift in Sources */,
 				CD08FE191D1D938F002D50E5 /* TimeOfDay.swift in Sources */,
+				CD08FE4D1D1E58C7002D50E5 /* ActivityPlannerTVCSectionHeaderView.swift in Sources */,
+				CD08FE481D1E58C7002D50E5 /* ActivityTimeTVC.swift in Sources */,
 				CD08FE231D1DC1A7002D50E5 /* WeeklyActivity.swift in Sources */,
+				CD08FE441D1E58C7002D50E5 /* ActivityPlannerTVC.swift in Sources */,
 				CD08FE2E1D1E45A1002D50E5 /* TodoList.swift in Sources */,
 				CD08FE331D1E46EA002D50E5 /* ActivityUtils.swift in Sources */,
 				CD08FE1B1D1D9432002D50E5 /* ActivityTime.swift in Sources */,
+				CD08FE491D1E58C7002D50E5 /* FrequencyPicker.swift in Sources */,
 				CD08FDF11D1D3F13002D50E5 /* ViewController.swift in Sources */,
 				26B449A31D1DB5290060FD0B /* ActivityPlannerModel.xcdatamodeld in Sources */,
 				26B449C51D1DD4260060FD0B /* PlannedActivity+CoreDataProperties.swift in Sources */,
@@ -458,7 +510,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";

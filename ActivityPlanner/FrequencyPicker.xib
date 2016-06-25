@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FrequencyPicker" customModule="iBreathe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qes-Vy-nsQ">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqa-as-XJe">
+                            <rect key="frame" x="0.0" y="0.0" width="52" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="-">
+                                <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="decreaseFrequency:" destination="iN0-l3-epB" eventType="touchUpInside" id="fah-7I-mrP"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWU-Lh-Z0m">
+                            <rect key="frame" x="62" y="0.0" width="61.5" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaJ-Rn-u3w">
+                            <rect key="frame" x="133.5" y="0.0" width="66.5" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="+">
+                                <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="increaseFrequency:" destination="iN0-l3-epB" eventType="touchUpInside" id="r5V-iX-pwI"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Qes-Vy-nsQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0dQ-Nj-KGL"/>
+                <constraint firstItem="Qes-Vy-nsQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="At8-Cg-Xhr"/>
+                <constraint firstAttribute="bottom" secondItem="Qes-Vy-nsQ" secondAttribute="bottom" id="lS4-If-hcD"/>
+                <constraint firstAttribute="trailing" secondItem="Qes-Vy-nsQ" secondAttribute="trailing" id="leb-mn-vhk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="frequencyLabel" destination="jWU-Lh-Z0m" id="61h-de-lCP"/>
+                <outlet property="minusButton" destination="Pqa-as-XJe" id="KYi-nh-58O"/>
+                <outlet property="plusButton" destination="oaJ-Rn-u3w" id="LwQ-K4-f5W"/>
+            </connections>
+            <point key="canvasLocation" x="283" y="325"/>
+        </view>
+    </objects>
+</document>
