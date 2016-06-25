@@ -37,8 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     todoCategory.setActions([remindAction, completeAction], forContext: .Default) // UIUserNotificationActionContext.Default (4 actions max)
     todoCategory.setActions([completeAction, remindAction], forContext: .Minimal) // UIUserNotificationActionContext.Minimal - for when space is limited (2 actions max)
     application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: (NSSet(array: [todoCategory]) as! Set<UIUserNotificationCategory>))) // we're now providing a set containing our category as an argument
-
-    
     
     var activityPlan = ActivityPlan(activityID: 1, activityName: "Test", shouldEnableNotification: true, activitiesInWeek: [[12•46], [], [], [], [], [], [12•47]])
     return true
