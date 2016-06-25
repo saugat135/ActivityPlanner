@@ -19,6 +19,9 @@
 		CD08FE1B1D1D9432002D50E5 /* ActivityTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */; };
 		CD08FE231D1DC1A7002D50E5 /* WeeklyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE221D1DC1A7002D50E5 /* WeeklyActivity.swift */; };
 		CD08FE281D1DDFDE002D50E5 /* ActivityPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE271D1DDFDE002D50E5 /* ActivityPlan.swift */; };
+		CD08FE2D1D1E45A1002D50E5 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE2B1D1E45A1002D50E5 /* TodoItem.swift */; };
+		CD08FE2E1D1E45A1002D50E5 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE2C1D1E45A1002D50E5 /* TodoList.swift */; };
+		CD08FE331D1E46EA002D50E5 /* ActivityUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FE321D1E46EA002D50E5 /* ActivityUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		CD08FE1A1D1D9432002D50E5 /* ActivityTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTime.swift; sourceTree = "<group>"; };
 		CD08FE221D1DC1A7002D50E5 /* WeeklyActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyActivity.swift; sourceTree = "<group>"; };
 		CD08FE271D1DDFDE002D50E5 /* ActivityPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPlan.swift; sourceTree = "<group>"; };
+		CD08FE2B1D1E45A1002D50E5 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		CD08FE2C1D1E45A1002D50E5 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		CD08FE321D1E46EA002D50E5 /* ActivityUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				CD08FE271D1DDFDE002D50E5 /* ActivityPlan.swift */,
+				CD08FE311D1E45AB002D50E5 /* Notifications */,
 				CD08FE261D1DDD40002D50E5 /* Helpers */,
 			);
 			name = Library;
@@ -171,6 +178,16 @@
 				CD08FE181D1D938F002D50E5 /* TimeOfDay.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		CD08FE311D1E45AB002D50E5 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				CD08FE321D1E46EA002D50E5 /* ActivityUtils.swift */,
+				CD08FE2B1D1E45A1002D50E5 /* TodoItem.swift */,
+				CD08FE2C1D1E45A1002D50E5 /* TodoList.swift */,
+			);
+			name = Notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD08FE2D1D1E45A1002D50E5 /* TodoItem.swift in Sources */,
 				CD08FE191D1D938F002D50E5 /* TimeOfDay.swift in Sources */,
 				CD08FE231D1DC1A7002D50E5 /* WeeklyActivity.swift in Sources */,
+				CD08FE2E1D1E45A1002D50E5 /* TodoList.swift in Sources */,
+				CD08FE331D1E46EA002D50E5 /* ActivityUtils.swift in Sources */,
 				CD08FE1B1D1D9432002D50E5 /* ActivityTime.swift in Sources */,
 				CD08FDF11D1D3F13002D50E5 /* ViewController.swift in Sources */,
 				CD08FDEF1D1D3F13002D50E5 /* AppDelegate.swift in Sources */,

@@ -10,15 +10,18 @@ struct ActivityPlan {
   var fridayActivity: WeeklyActivity = WeeklyActivity.Friday([])
   var saturdayActivity: WeeklyActivity = WeeklyActivity.Saturday([])
   
+  var weeklyActivities: [WeeklyActivity] {
+    get {return [sundayActivity, mondayActivity, tuesdayActivity, wednesdayActivity, thursdayActivity, fridayActivity, saturdayActivity]
+    }
+    set {
+      self.weeklyActivities = newValue
+    }
+  }
+  
   let activityName: String
   let activityID: Int
   var shouldEnableNotification = true
-  
-  init(activityID: Int, activityName: String, shouldEnableNotification: Bool = true) {
-    self.activityName = activityName
-    self.activityID = activityID
-    self.shouldEnableNotification = shouldEnableNotification
-  }
+  private var notificationItems: [TodoItem] = []
   
   init(activityID: Int, activityName: String, shouldEnableNotification: Bool = true, activitiesInWeek: [[TimeOfDay]]) {
     self.activityName = activityName
@@ -32,10 +35,22 @@ struct ActivityPlan {
     thursdayActivity = WeeklyActivity.Thursday(activitiesInWeek[4])
     fridayActivity = WeeklyActivity.Friday(activitiesInWeek[5])
     saturdayActivity = WeeklyActivity.Saturday(activitiesInWeek[6])
+    
+    if shouldEnableNotification {
+      for i in 0..<7 {
+        for timeOfDay in activitiesInWeek[i] {
+          let item = TodoItem(deadline: timeOfDay.toNSDate(), title: self.activityName, UUID: String(self.activityID))
+          self.notificationItems.append(item)
+          TodoList.sharedInstance.addItem(item)
+        }
+      }
+    }
   }
   
-  func activateNotification() {
-    
+  func removeNotifications() {
+    for item in self.notificationItems {
+      TodoList.sharedInstance.removeItem(item)
+    }
   }
   
 }
