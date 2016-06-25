@@ -27,6 +27,8 @@ struct ActivityPlan {
     self.activityName = activityName
     self.activityID = activityID
     self.shouldEnableNotification = shouldEnableNotification
+    
+    if activitiesInWeek.count > 0 {
 
     sundayActivity = WeeklyActivity.Sunday(activitiesInWeek[0])
     mondayActivity = WeeklyActivity.Monday(activitiesInWeek[1])
@@ -44,6 +46,7 @@ struct ActivityPlan {
           TodoList.sharedInstance.addItem(item)
         }
       }
+    }
     }
   }
   
