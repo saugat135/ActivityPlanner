@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    print("Documents Directory: ", applictionDocumentsDirectory())
+
     let completeAction = UIMutableUserNotificationAction()
     completeAction.identifier = "COMPLETE_TODO" // the unique identifier for this action
     completeAction.title = "Complete" // title for the action button
