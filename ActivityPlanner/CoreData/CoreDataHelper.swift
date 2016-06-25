@@ -102,17 +102,20 @@ class CoreDataHelper: CoreDataStack {
         return timeOfDay
     }
 
-    func createOrUpdatePlannedActivity(activityID: Int) {
-
+    func createOrUpdatePlannedActivity(activityID: Int) -> PlannedActivity {
+        let createdOrUpdatedplannedActivity: PlannedActivity
         if let oldPlannedActivity = plannedActivityForID(activityID) {
-
+            createdOrUpdatedplannedActivity = oldPlannedActivity
         } else {
             let plannedActivity = PlannedActivity(entity: plannedActivityEntity()!, insertIntoManagedObjectContext: managedObjectContext)
             plannedActivity.activityID = activityID
             plannedActivity.days = NSSet(array: create7DaysOfAWeek())
+            createdOrUpdatedplannedActivity = plannedActivity
         }
 
         saveMainContext()
+        return createdOrUpdatedplannedActivity
+
     }
 
 }

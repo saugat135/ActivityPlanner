@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 
 class CoreDataStack: NSObject {
-    static let moduleName = "Activity_Planner"
+    static let moduleName = "ActivityPlannerModel"
 
     func saveMainContext() {
         if managedObjectContext.hasChanges {

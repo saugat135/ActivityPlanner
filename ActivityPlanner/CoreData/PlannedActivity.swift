@@ -9,6 +9,16 @@
 import Foundation
 import CoreData
 
+/*
+
+ Use Case
+ let plannedActivity = CoreDataHelper.sharedInstance.createOrUpdatePlannedActivity(1)
+ print(plannedActivity.sevenDays[3].dayName)
+ plannedActivity.sevenDays[3].addDateToDay(NSDate())
+ CoreDataHelper.sharedInstance.saveMainContext()
+
+*/
+
 @objc(PlannedActivity)
 class PlannedActivity: NSManagedObject {
 

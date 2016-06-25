@@ -18,6 +18,7 @@
 		26B449C81D1DD4260060FD0B /* DateTimeOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B449C21D1DD4260060FD0B /* DateTimeOfDay.swift */; };
 		26B449C91D1DD4260060FD0B /* WeekDay+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B449C31D1DD4260060FD0B /* WeekDay+CoreDataProperties.swift */; };
 		26B449CA1D1DD4260060FD0B /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B449C41D1DD4260060FD0B /* WeekDay.swift */; };
+		26B449DE1D1E3DD30060FD0B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B449DD1D1E3DD30060FD0B /* Utility.swift */; };
 		CD08FDEF1D1D3F13002D50E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FDEE1D1D3F13002D50E5 /* AppDelegate.swift */; };
 		CD08FDF11D1D3F13002D50E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08FDF01D1D3F13002D50E5 /* ViewController.swift */; };
 		CD08FDF41D1D3F13002D50E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD08FDF21D1D3F13002D50E5 /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 		26B449C21D1DD4260060FD0B /* DateTimeOfDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeOfDay.swift; sourceTree = "<group>"; };
 		26B449C31D1DD4260060FD0B /* WeekDay+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeekDay+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		26B449C41D1DD4260060FD0B /* WeekDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDay.swift; sourceTree = "<group>"; };
+		26B449DD1D1E3DD30060FD0B /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		CD08FDEB1D1D3F13002D50E5 /* ActivityPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD08FDEE1D1D3F13002D50E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD08FDF01D1D3F13002D50E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				CD08FDF51D1D3F13002D50E5 /* Assets.xcassets */,
 				CD08FDF71D1D3F13002D50E5 /* LaunchScreen.storyboard */,
 				CD08FDFA1D1D3F13002D50E5 /* Info.plist */,
+				26B449DD1D1E3DD30060FD0B /* Utility.swift */,
 			);
 			path = ActivityPlanner;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				CD08FDF11D1D3F13002D50E5 /* ViewController.swift in Sources */,
 				26B449A31D1DB5290060FD0B /* ActivityPlannerModel.xcdatamodeld in Sources */,
 				26B449C51D1DD4260060FD0B /* PlannedActivity+CoreDataProperties.swift in Sources */,
+				26B449DE1D1E3DD30060FD0B /* Utility.swift in Sources */,
 				26B449AA1D1DB7060060FD0B /* CoreDataHelper.swift in Sources */,
 				CD08FDEF1D1D3F13002D50E5 /* AppDelegate.swift in Sources */,
 				CD08FE281D1DDFDE002D50E5 /* ActivityPlan.swift in Sources */,
